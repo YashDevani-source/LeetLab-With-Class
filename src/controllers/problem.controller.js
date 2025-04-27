@@ -1,4 +1,4 @@
-import { getJudge0LanguageId } from "../libs/judge0.libs"
+import { getJudge0LanguageId, submitBatch } from "../libs/judge0.libs"
 
 export const createProblem = async (req, res) => {
     // going to get all the data from req.body
@@ -24,6 +24,8 @@ export const createProblem = async (req, res) => {
         }))
 
         const submissionResults = await submitBatch(submissions)
+        const tokens = submissionResults.map((res) => res.token)
+        const results = await pollBatchResults(tokens)
        }
 
    } catch (error) {

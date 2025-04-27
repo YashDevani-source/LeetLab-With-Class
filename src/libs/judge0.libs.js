@@ -17,7 +17,7 @@ export const submitBatch = async (submissions) => {
     return data // [{token}, {token}, {token}]
 }
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve,ms))
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 export const pollBatchResults = async (tokens) => {
     while(true){
