@@ -21,8 +21,9 @@ export const createProblem = async (req, res) => {
             language_id:languageId,
             stdin:input,
             expected_output:output,
-            
         }))
+
+        const submissionResults = await submitBatch(submissions)
        }
 
    } catch (error) {
